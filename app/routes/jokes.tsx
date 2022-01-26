@@ -1,6 +1,6 @@
 import type { User } from '@prisma/client'
 import type { LinksFunction, LoaderFunction } from 'remix'
-import { Outlet, Link, useLoaderData } from 'remix'
+import { Form, Outlet, Link, useLoaderData } from 'remix'
 import { db } from '~/utils/db.server'
 import { getUser } from '~/utils/session.server'
 import stylesUrl from '../styles/jokes.css'
@@ -50,11 +50,11 @@ export default function JokesRoute() {
           {data.user ? (
             <div className="user-info">
               <span>{`Hi ${data.user.username}`}</span>
-              <form action="/logout" method="post">
+              <Form action="/logout" method="post">
                 <button type="submit" className="button">
                   Logout
                 </button>
-              </form>
+              </Form>
             </div>
           ) : (
             <Link to="/login">Login</Link>
