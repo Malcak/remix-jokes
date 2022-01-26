@@ -2,6 +2,11 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+## Environment
+
+- `DATABASE_URL`
+- `SESSION_SECRET`
+
 ## Development
 
 From your terminal:
