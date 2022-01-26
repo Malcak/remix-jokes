@@ -1,6 +1,5 @@
-import { User } from '@prisma/client'
-import type { LinksFunction } from 'remix'
-import type { LoaderFunction } from 'remix'
+import type { User } from '@prisma/client'
+import type { LinksFunction, LoaderFunction } from 'remix'
 import { Outlet, Link, useLoaderData } from 'remix'
 import { db } from '~/utils/db.server'
 import { getUser } from '~/utils/session.server'
