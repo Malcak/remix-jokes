@@ -3,10 +3,10 @@ import type { LinksFunction } from 'remix'
 import {
   Links,
   LiveReload,
-  Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useCatch
 } from 'remix'
 import type { MetaFunction } from 'remix'
 
@@ -63,6 +63,20 @@ export default function App() {
   return (
     <Document>
       <Outlet />
+    </Document>
+  )
+}
+
+export function CatchBoundary() {
+  const caught = useCatch()
+
+  return (
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <div className="error-container">
+        <h1>
+          {caught.status} {caught.statusText}
+        </h1>
+      </div>
     </Document>
   )
 }
